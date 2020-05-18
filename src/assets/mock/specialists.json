@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "fullName": "Аношкин Станислав Касьянович",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 2,
+    "fullName": "Бажанов Вячеслав Ираклиевич",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 3,
+    "fullName": "Игумнов Демьян Эмилевич",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 4,
+    "fullName": "Качусов Вячеслав Евстафиевич",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 5,
+    "fullName": "Ананьев Дмитрий Евстафиевич",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 6,
+    "fullName": "Соколова Полина Ильевна",
+    "logoUrl": "./assets/mock/logo.png"
+  },
+  {
+    "id": 7,
+    "fullName": "Малыхин Клавдий Святославович",
+    "logoUrl": "./assets/mock/logo.png"
+  }
+]

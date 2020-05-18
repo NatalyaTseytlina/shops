@@ -1,0 +1,11 @@
+<ng-container *ngIf="(specialists$ | async) as specialists">
+  <ng-container *ngIf="(shops$ | async) as shops">
+
+    <app-main-block [specialists]="specialists"
+                    [shops]="shops"
+                    [saveState]="saveState"
+                    (saveEvent)="save($event)">
+    </app-main-block>
+
+  </ng-container>
+</ng-container>

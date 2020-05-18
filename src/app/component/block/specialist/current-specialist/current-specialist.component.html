@@ -1,0 +1,48 @@
+<div class="specialist" [ngClass]="{'specialist-undefined': specialist === null}">
+
+  <ng-container *ngIf="specialist === null">
+    <h2 class="specialist-undefined__heading">Специалист не назначен</h2>
+    <p class="specialist-undefined__text">Чтобы начать работу с нераспределенными магазинами, вам необходимо добавить хотя бы одного специалиста</p>
+    <img src="./assets/icon/add-user.png" alt="add user" class="specialist-undefined__icon">
+  </ng-container>
+
+  <ng-container *ngIf="specialist !== null">
+    <p class="specialist__label">Специалист</p>
+
+    <div class="specialist-person">
+      <div class="specialist-person-data">
+        <img [src]="specialist.logoUrl | urlSanitize" alt="user logo" class="specialist-person-data__image">
+        <p class="specialist-person-data__name">{{ specialist.fullName }}</p>
+        <p class="specialist-person-data__shops-count">
+          {{ !specialist.shops ? 0 : specialist.shops.length }}
+          {{ ['магазин', 'магазина', 'магазинов'] | pluralForm : (!specialist.shops ? 0 : specialist.shops.length) }}
+        </p>
+      </div>
+      <a href="javascript:void(0)" (click)="deleteSpecialist()" class="specialist-person-delete">
+        <img src="./assets/icon/delete.png" alt="delete user" class="specialist-person-delete__icon">
+      </a>
+    </div>
+
+    <p class="specialist__label specialist__label--shop">Магазины</p>
+
+    <ng-container *ngIf="!specialist.shops || !specialist.shops.length">
+      <div class="specialist-without-shops">
+        <p class="specialist-without-shops__text">Не назначены</p>
+        <div class="specialist-without-shops__icon">
+          <img src="./assets/icon/attention.png" alt="attention" class="specialist-without-shops__image">
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="specialist.shops && specialist.shops.length">
+      <ng-container *ngFor="let shop of specialist.shops; let i = index">
+        <div class="specialist-shop">
+          <app-shop-item [shop]="shop"></app-shop-item>
+          <div class="specialist-shop__delete" (click)="deleteShop(i)"></div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+  </ng-container>
+
+</div>

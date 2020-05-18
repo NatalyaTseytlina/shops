@@ -1,0 +1,50 @@
+@import "../../../../../global-styles/vars";
+
+.shops {
+  min-height: 440px;
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 17px 25px 25px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  &__label {
+    display: inline-block;
+    margin: 0 12px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: @label;
+  }
+  &__attention {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: @attention;
+    border-radius: 50%;
+    position: relative;
+    &-image {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    padding-left: 39px;
+    margin-bottom: 26px;
+    cursor: pointer;
+    &__select {
+      display: block;
+      margin-right: 20px;
+    }
+  }
+}

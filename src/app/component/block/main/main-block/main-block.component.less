@@ -1,0 +1,52 @@
+@import "../../../../../global-styles/vars";
+@import "../../../../../global-styles/mixin";
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  &__column {
+    width: 47%;
+  }
+  &-save {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 31px 0 16px;
+    &__button {
+      .button-reset();
+      border: 1px solid @textDark;
+      border-radius: 4px;
+      padding: 12px 18px 12px 24px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      color: @buttonText;
+    }
+    &__icon {
+      display: inline-block;
+      margin-left: 19px;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #333333;
+      border-radius: 50%;
+      vertical-align: middle;
+      position: relative;
+    }
+    &__image {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &__text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      color: @buttonText;
+      margin: 0 20px 0 0;
+    }
+  }
+}

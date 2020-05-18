@@ -1,0 +1,6 @@
+<div class="tab" (click)="selectSpecialist()">
+  <div class="tab__shops-count" *ngIf="specialist.shops && specialist.shops.length">
+    {{ specialist.shops.length <= 9 ? specialist.shops.length : '>9' }}
+  </div>
+  <img [src]="specialist.logoUrl | urlSanitize" alt="user logo" class="tab__image">
+</div>

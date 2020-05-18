@@ -1,0 +1,42 @@
+@import "../../../../../global-styles/vars";
+@import "../../../../../global-styles/mixin";
+
+.specialists {
+  display: flex;
+  margin: 37px 0 0;
+  &-add {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &--no-specialists {
+      margin-bottom: 20px;
+    }
+    &__button {
+      .a-reset();
+      display: block;
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: @light;
+      position: relative;
+    }
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &__text {
+      .a-reset();
+      display: block;
+      margin: 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 16px;
+      color: @mainDark;
+
+    }
+  }
+}

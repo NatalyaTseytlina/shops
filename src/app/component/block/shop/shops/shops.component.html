@@ -1,0 +1,17 @@
+<div class="shops">
+
+  <div class="shops__header">
+    <p class="shops__label">Нераспределенные магазины: {{ shops.length }}</p>
+    <div class="shops__attention">
+      <img src="./assets/icon/attention.png" alt="attention" class="shops__attention-image">
+    </div>
+  </div>
+
+  <ng-container *ngFor="let shop of shops; let i = index">
+    <div class="shops-item" (click)="selectShop(i)">
+      <img src="./assets/icon/select.png" alt="" class="shops-item__select">
+      <app-shop-item [shop]="shop"></app-shop-item>
+    </div>
+  </ng-container>
+
+</div>

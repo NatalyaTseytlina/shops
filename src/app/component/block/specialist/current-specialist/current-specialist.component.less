@@ -1,0 +1,146 @@
+@import "../../../../../global-styles/vars";
+@import "../../../../../global-styles/mixin";
+
+.specialist {
+  min-height: 440px;
+  background-color: @primaryLight;
+  border: 1px solid @primaryLight;
+  border-radius: 0 6px 6px 6px;
+  padding: 24px 20px 24px 23px;
+  &__label {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: @label;
+    &--shop {
+      margin-bottom: 31px;
+    }
+  }
+  &-person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 30px;
+    &-data {
+      display: flex;
+      align-items: center;
+      &__image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      &__name {
+        margin: 0 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: @primaryDark;
+      }
+      &__shops-count {
+        margin: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #007AFF;
+      }
+    }
+    &-delete {
+      .a-reset();
+      display: block;
+      margin-right: 4px;
+      &__icon {
+        display: block;
+      }
+    }
+  }
+
+  &-without-shops {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    &__text {
+      margin: 0 12px 0 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      color: @textDark;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
+      background-color: @attention;
+      border-radius: 50%;
+      position: relative;
+    }
+    &__image {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-shop {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 34px;
+    margin-bottom: 26px;
+    &__delete {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 7px;
+        height: 2px;
+        background-color: #ADADAD;
+      }
+    }
+  }
+
+  &-undefined {
+    background: @ultraLight;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: center;
+    padding: 155px 0 136px;
+    &__heading {
+      margin: 0 0 18px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: @mainDark;
+    }
+    &__text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 22px;
+      text-align: center;
+      color: @middle;
+      max-width: 80%;
+      margin: 0 auto 24px;
+    }
+    &__icon {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

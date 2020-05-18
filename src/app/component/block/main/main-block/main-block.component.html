@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="block">
+
+    <div class="block__column">
+      <app-specialists [specialists]="addedSpecialists"
+                       [showAddButton]="specialists.length > 0"
+                       (addSpecialistEvent)="addSpecialist(); setLastAddedSpecialistCurrent()"
+                       (selectSpecialistEvent)="selectSpecialist($event)">
+      </app-specialists>
+      <app-current-specialist [specialist]="addedSpecialists[currentSpecialistIndex] || null"
+                              (deleteSpecialistEvent)="deleteCurrentSpecialist(); setLastAddedSpecialistCurrent()"
+                              (deleteShopEvent)="deleteShop($event)">
+      </app-current-specialist>
+    </div>
+
+    <div class="block__column">
+      <div class="block-save">
+
+        <p class="block-save__text">
+          <ng-container [ngSwitch]="saveState">
+            <ng-container *ngSwitchCase="SaveStates.SAVING">Сохранение выполняется</ng-container>
+            <ng-container *ngSwitchCase="SaveStates.SUCCESS">Успешно сохранено</ng-container>
+            <ng-container *ngSwitchCase="SaveStates.ERROR">Ошибка при сохранении</ng-container>
+          </ng-container>
+        </p>
+
+        <button class="block-save__button" (click)="save()">
+          Сохранить изменения
+          <span class="block-save__icon">
+            <img src="./assets/icon/save.png" alt="save" class="block-save__image">
+          </span>
+        </button>
+      </div>
+      <app-shops [shops]="shops"
+                 (selectShopEvent)="selectShop($event)">
+      </app-shops>
+    </div>
+
+  </div>
+</div>

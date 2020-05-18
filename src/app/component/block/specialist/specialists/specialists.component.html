@@ -1,0 +1,19 @@
+<div class="specialists">
+  <ng-container *ngFor="let specialist of specialists; let i = index">
+    <app-specialist-tab [specialist]="specialist" (selectSpecialistEvent)="selectSpecialist(i)"></app-specialist-tab>
+  </ng-container>
+
+  <div class="specialists-add"
+       [ngClass]="{'specialists-add--no-specialists': specialists.length === 0}"
+       *ngIf="showAddButton">
+    <a href="javascript:void(0)" class="specialists-add__button" (click)="addSpecialist()">
+      <img src="./assets/icon/add.png" alt="add" class="specialists-add__icon">
+    </a>
+    <a *ngIf="specialists.length === 0"
+       (click)="addSpecialist()"
+       href="javascript:void(0)"
+       class="specialists-add__text">
+      Добавить специалиста
+    </a>
+  </div>
+</div>
